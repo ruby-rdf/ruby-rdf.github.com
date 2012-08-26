@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Ruby-rdf : Main page for ruby-rdf" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Ruby-rdf</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ruby-rdf/ruby-rdf">View on GitHub</a>
+
+          <h1 id="project_title">Ruby-rdf</h1>
+          <h2 id="project_tagline">Main page for ruby-rdf</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ruby-rdf/ruby-rdf/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ruby-rdf/ruby-rdf/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Linked Data for Ruby</h1>
+
+<p>This is the home of Ruby RDF. This project collects numerous gems supporting Linked Data and Semantic Web programming in Ruby.</p>
+
+<p>The primary gem is <a href="http://ruby-rdf.github.com/rdf">RDF.rb</a>, which contains the core algorithms and classes used for doing basic programming of [RDF][], including support for <code>Repositories</code>, <code>Graphs</code>, <code>Statements</code>, <code>URIs</code>, <code>Literals</code>, and <code>BNodes</code>.</p>
+
+<p>The Ruby RDF account also collects numerous gems used for reading and writing different RDF formats. At present, this includes the following:</p>
+
+<ul>
+<li>
+<a href="http://en.wikipedia.org/wiki/N-Triples">N-Triples</a> (through <a href="http://ruby-rdf.github.com/rdf">RDF.rb</a>)</li>
+<li>
+<a href="http://sw.deri.org/2008/07/n-quads/">N-Quads</a> (through <a href="http://ruby-rdf.github.com/rdf">RDF.rb</a>)</li>
+<li>
+<a href="http://www.w3.org/TR/turtle/">Turtle</a> (through <a href="http://ruby-rdf.github.com/rdf-turtle">RDF::Turtle</a> and <a href="http://ruby-rdf.github.com/rdf-raptor">RDF::Raptor</a>),</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/Notation3">Notation3</a> (through <a href="http://ruby-rdf.github.com/rdf-n3">RDF::N3</a>),</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/RDFa">RDFa</a> (through <a href="http://ruby-rdf.github.com/rdf-rdfa">RDF::RDFa</a> and <a href="http://ruby-rdf.github.com/rdf-raptor">RDF::Raptor</a>),</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/Microdata_(HTML)">Microdata</a> (through <a href="http://ruby-rdf.github.com/rdf-microdata">RDF::Microdata</a>),</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/RDF/XML">RDF/XML</a> (through <a href="http://ruby-rdf.github.com/rdf-rdfxml">RDF::RDFXML</a> and <a href="http://ruby-rdf.github.com/rdf-raptor">RDF::Raptor</a>),</li>
+<li>
+<a href="http://n2.talis.com/wiki/RDF_JSON_Specification">RDF/JSON</a> (through <a href="http://ruby-rdf.github.com/rdf-json">RDF::JSON</a>),</li>
+<li>
+<a href="http://json-ld.org/">JSON-LD</a> (through <a href="http://gkellogg.github.com/json-ld">JSON::LD</a>)</li>
+</ul><p>In addition to basic Query mechanisms</p>
+
+<ul>
+<li>[RDF::Isomorphic][],</li>
+<li>
+<a href="http://ruby-rdf.github.com/sparql-client">SPARQL::Client</a>,</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/Sparql">SPARQL</a>.</li>
+</ul><p>There are also storage adaptors for popular Triple-stores, Graph-stores SQL, and other NOSQL stores.</p>
+
+<ul>
+<li>
+<a href="http://ruby-rdf.github.com/rdf-do">RDF::DO</a>,</li>
+<li>
+<a href="http://ruby-rdf.github.com/rdf-mongo">RDF::Mongo</a>,</li>
+<li><a href="http://ruby-rdf.github.com/rdf-sesame">RDF::Sesame</a></li>
+</ul><p>There is also a <a href="http://ruby-rdf.github.com/linkeddata">LinkedData</a> gem, which combines a core set of these together.</p>
+
+<h2>Examples</h2>
+
+<pre><code>require 'linkeddata'
+</code></pre>
+
+<h3>Writing RDF data using the N-Triples format</h3>
+
+<pre><code>require 'rdf/ntriples'
+graph = RDF::Graph.new &lt;&lt; [:hello, RDF::DC.title, "Hello, world!"]
+graph.dump(:ntriples)
+</code></pre>
+
+<p>or</p>
+
+<pre><code>RDF::Writer.open("hello.nt") { |writer| writer &lt;&lt; graph }
+</code></pre>
+
+<h3>Reading RDF data in the N-Triples format</h3>
+
+<pre><code>require 'rdf/ntriples'
+graph = RDF::Graph.load("http://ruby-rdf.github.com/rdf/etc/doap.nt")
+</code></pre>
+
+<p>or</p>
+
+<pre><code>RDF::Reader.open("http://ruby-rdf.github.com/rdf/etc/doap.nt") do |reader|
+  reader.each_statement do |statement|
+    puts statement.inspect
+  end
+end
+</code></pre>
+
+<h3>Reading RDF data in other formats</h3>
+
+<p>{RDF::Reader.open} and {RDF::Repository.load} use a number of mechanisms to determine the appropriate reader
+to use when loading a file. The specific format to use can be forced using, e.g. <code>:format =&gt; :ntriples</code>
+option where the specific format symbol is determined by the available readers. Both also use
+MimeType or file extension, where available.</p>
+
+<pre><code>require 'linkeddata'
+
+repo = RDF::Repository.load("http://ruby-rdf.github.com/rdf-turtle/etc/doap.ttl")
+</code></pre>
+
+<p>A specific sub-type of Reader can also be invoked directly:</p>
+
+<pre><code>require 'rdf/turtle'
+
+RDF::Reader.open("http://ruby-rdf.github.com/rdf-turtle/etc/doap.ttl") do |reader|
+  reader.each_statement do |statement|
+    puts statement.inspect
+  end
+end
+</code></pre>
+
+<h3>Writing RDF data using other formats</h3>
+
+<p><code>RDF::Writer.open</code>, <code>RDF::Enumerable#dump</code>, <code>RDF::Writer.dump</code> take similar options to <code>RDF::Reader.open</code> to determine the
+appropriate writer to use.</p>
+
+<pre><code>require 'linkeddata'
+
+RDF::NTriples::Writer.open("doap.nt") do |writer|
+  writer &lt;&lt; RDF::Reader.open("http://ruby-rdf.github.com/rdf/etc/doap.nt")
+end
+</code></pre>
+
+<p>A specific sub-type of Writer can also be invoked directly:</p>
+
+<pre><code>require 'rdf/nquads'
+
+graph.dump(:nquads)
+</code></pre>
+
+<h3>Querying RDF data using basic graph patterns (BGPs)</h3>
+
+<pre><code>require 'rdf/nquads'
+
+repo = RDF::Repository.load("http://ruby-rdf.github.com/rdf/etc/doap.nq")
+query = RDF::Query.new({
+  :person =&gt; {
+    RDF.type  =&gt; RDF::FOAF.Person,
+    RDF::FOAF.name =&gt; :name,
+    RDF::FOAF.mbox =&gt; :email,
+  }
+})
+
+query.execute(repo).each do |solution|
+  puts "name=#{solution.name} email=#{solution.email}"
+end
+</code></pre>
+
+<p>A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full support for <a href="http://www.w3.org/TR/rdf-sparql-query/">SPARQL 1.0</a> queries.</p>
+
+<h3>Using pre-defined RDF vocabularies</h3>
+
+<pre><code>DC.title      #=&gt; RDF::URI("http://purl.org/dc/terms/title")
+FOAF.knows    #=&gt; RDF::URI("http://xmlns.com/foaf/0.1/knows")
+RDF.type      #=&gt; RDF::URI("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
+RDFS.seeAlso  #=&gt; RDF::URI("http://www.w3.org/2000/01/rdf-schema#seeAlso")
+RSS.title     #=&gt; RDF::URI("http://purl.org/rss/1.0/title")
+OWL.sameAs    #=&gt; RDF::URI("http://www.w3.org/2002/07/owl#sameAs")
+XSD.dateTime  #=&gt; RDF::URI("http://www.w3.org/2001/XMLSchema#dateTime")
+</code></pre>
+
+<h3>Using ad-hoc RDF vocabularies</h3>
+
+<pre><code>foaf = RDF::Vocabulary.new("http://xmlns.com/foaf/0.1/")
+foaf.knows    #=&gt; RDF::URI("http://xmlns.com/foaf/0.1/knows")
+foaf[:name]   #=&gt; RDF::URI("http://xmlns.com/foaf/0.1/name")
+foaf['mbox']  #=&gt; RDF::URI("http://xmlns.com/foaf/0.1/mbox")
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Ruby-rdf maintained by <a href="https://github.com/ruby-rdf">ruby-rdf</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
