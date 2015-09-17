@@ -7,21 +7,32 @@ The primary gem is [RDF.rb](http://ruby-rdf.github.com/rdf), which contains the 
 
 The Ruby RDF account also collects numerous gems used for reading and writing different RDF formats. At present, this includes the following:
 
-* [N-Triples][] (through [RDF.rb][])
-* [N-Quads][] (through [RDF.rb][])
-* [Turtle][] (through [RDF::Turtle][] and [RDF::Raptor][]),
-* [Notation3][] (through [RDF::N3][]),
-* [RDFa][] (through [RDF::RDFa][] and [RDF::Raptor][]),
-* [Microdata][] (through [RDF::Microdata][]),
-* [RDF/XML][] (through [RDF::RDFXML][] and [RDF::Raptor][]),
-* [RDF/JSON][] (through [RDF::JSON]),
 * [JSON-LD][] (through [JSON::LD])
+* [Microdata][] (through [RDF::Microdata][]),
+* [N-Quads][] (through [RDF.rb][])
+* [N-Triples][] (through [RDF.rb][])
+* [Notation3][] (through [RDF::N3][]),
+* [RDF/JSON][] (through [RDF::JSON]),
+* [CSV][] (through [RDF::Tabular]),
+* [RDF/XML][] (through [RDF::RDFXML][] and [RDF::Raptor][]),
+* [RDFa][] (through [RDF::RDFa][] and [RDF::Raptor][]),
+* [TriG][] (through [RDF::TriG][]),
+* [TriX][] (through [RDF::TriX][]),
+* [Turtle][] (through [RDF::Turtle][] and [RDF::Raptor][]),
 
 In addition to basic Query mechanisms
 
+* [LD::Patch][],
 * [RDF::Isomorphic][],
+* [RDF::Normalize][],
 * [SPARQL::Client][],
 * [SPARQL][].
+
+Web infrastructure
+
+* [RDF::LDP][],
+* [Rack::Linkeddata][],
+* [Sinatra::LinkedData][].
 
 There are also storage adaptors for popular Triple-stores, Graph-stores SQL, and other NOSQL stores.
 
@@ -135,17 +146,25 @@ A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full 
 [RDF::Mongo]:     http://ruby-rdf.github.com/rdf-mongo
 [RDF::Sesame]:    http://ruby-rdf.github.com/rdf-sesame
 [RDF::JSON]:      http://ruby-rdf.github.com/rdf-json
+[RDF::LDP]:       http://ruby-rdf.github.com/rdf-ldp
 [RDF::Microdata]: http://ruby-rdf.github.com/rdf-microdata
+[RDF::Normalize]: http://ruby-rdf.github.com/rdf-normalize
 [RDF::N3]:        http://ruby-rdf.github.com/rdf-n3
 [RDF::RDFa]:      http://ruby-rdf.github.com/rdf-rdfa
 [RDF::RDFXML]:    http://ruby-rdf.github.com/rdf-rdfxml
+[RDF::Tabular]:   http://ruby-rdf.github.com/rdf-tabular
+[RDF::TriG]:      http://ruby-rdf.github.com/rdf-trig
 [RDF::TriX]:      http://ruby-rdf.github.com/rdf-trix
 [RDF::Turtle]:    http://ruby-rdf.github.com/rdf-turtle
 [RDF::Raptor]:    http://ruby-rdf.github.com/rdf-raptor
 [LinkedData]:     http://ruby-rdf.github.com/linkeddata
-[JSON::LD]:       http://gkellogg.github.com/json-ld
+[JSON::LD]:       http://ruby-rdf.github.com/json-ld
+[LD::Patch]:      http://ruby-rdf.github.com/ld-patch
 [SPARQL gem]:     http://ruby-rdf.github.com/sparql
 [SPARQL::Client]: http://ruby-rdf.github.com/sparql-client
+[Rack::Linkeddata]:     http://ruby-rdf.github.com/rack-linkeddata
+[Sinatra::Linkeddata]:  http://ruby-rdf.github.com/sinatra-linkeddata
+[CSV]:            http://www.w3.org/TR/tabular-data-model
 [JSON-LD]:        http://json-ld.org/
 [Linked Data]:    http://linkeddata.org/
 [Microdata]:      http://en.wikipedia.org/wiki/Microdata_(HTML)
@@ -157,6 +176,7 @@ A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full 
 [RDFa]:           http://en.wikipedia.org/wiki/RDFa
 [Raptor]:         http://en.wikipedia.org/wiki/Redland_RDF_Application_Framework
 [SPARQL]:         http://en.wikipedia.org/wiki/Sparql
+[TriG]:           http://dvcs.w3.org/hg/rdf/raw-file/default/trig/index.html
 [TriX]:           http://www.w3.org/2004/03/trix/
 [Turtle]:         http://www.w3.org/TR/turtle/
 [versioning]:     http://blog.zenspider.com/2008/10/rubygems-howto
