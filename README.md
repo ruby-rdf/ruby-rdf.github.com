@@ -146,6 +146,7 @@ A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full 
 [RDF::Mongo]:     http://ruby-rdf.github.com/rdf-mongo
 [RDF::Sesame]:    http://ruby-rdf.github.com/rdf-sesame
 [RDF::JSON]:      http://ruby-rdf.github.com/rdf-json
+[RDF::Isomorphic]: http://ruby-rdf.github.com/rdf-isomorphic
 [RDF::LDP]:       http://ruby-rdf.github.com/rdf-ldp
 [RDF::Microdata]: http://ruby-rdf.github.com/rdf-microdata
 [RDF::Normalize]: http://ruby-rdf.github.com/rdf-normalize
