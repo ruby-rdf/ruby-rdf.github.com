@@ -1,0 +1,10 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX doap: <http://usefulinc.com/ns/doap#>
+
+SELECT ?project ?resource ?name
+WHERE {
+  ?project a doap:Project;
+    doap:developer ?person .
+  ?person a foaf:Person;
+    foaf:name ?name .
+}

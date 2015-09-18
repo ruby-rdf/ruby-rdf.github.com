@@ -1,5 +1,4 @@
-Linked Data for Ruby
-====================
+# Linked Data for Ruby
 
 This is the home of Ruby RDF. This project collects numerous gems supporting Linked Data and Semantic Web programming in Ruby.
 
@@ -122,7 +121,7 @@ A specific sub-type of Writer can also be invoked directly:
       puts "name=#{solution.name} email=#{solution.email}"
     end
 
-A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full support for [SPARQL 1.0](http://www.w3.org/TR/rdf-sparql-query/) queries.
+A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full support for [SPARQL 1.1](http://www.w3.org/TR/sparql11-query/) queries and [updates](http://www.w3.org/TR/sparql11-update/).
 
 ### Using pre-defined RDF vocabularies
 
@@ -140,6 +139,14 @@ A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full 
     foaf.knows    #=> RDF::URI("http://xmlns.com/foaf/0.1/knows")
     foaf[:name]   #=> RDF::URI("http://xmlns.com/foaf/0.1/name")
     foaf['mbox']  #=> RDF::URI("http://xmlns.com/foaf/0.1/mbox")
+
+## Presentations on RDF.rb and related technologies
+
+* [Ruby SemWeb](presentations/RubySemWeb-2011-12-06/index.html) – Introduction to RDF.rb given at the [Lotico Semantic Web meetup in San Francisco on 06 December 2011](http://www.meetup.com/The-San-Francisco-Semantic-Web-Meetup/events/36879012/) by Gregg.
+* [Belin Lotico](presentations/Berlin-Lotico/index.html) – Tutorial on RDF.rb given at the [Lotico Semantic Web meetup in Berlin on 18 June 2015](http://www.meetup.com/The-Berlin-Semantic-Web-Meetup-Group/events/222454444/) by Arto.
+* [JSON-LD: JSON for Linking Data](presentations/JSON-LD-JSON-for-linking-data/index.html) – Introduction to JSON-LD given at the [Semantic Technologies Conference in San Francisco on 7 June 2012](http://semtechbizsf2012.semanticweb.com/agenda.cfm?confid=65&scheduleDay=PRINT) by Gregg.
+* [Presenting RDF](presentations/Presenting%20RDF/index.html) – Discussion of the technology behind the [RDF Distiller](http://rdf.greggkellogg.net/) and [Structured Data Linter](http://linter.structured-data.org/) by Gregg.
+* [Tabular Data on the Web](presentations/Tabular-Data-on-the-Web/index.html) - Discussion of the CSV on the Web proposed standard given at [Smart Data conference in San Jose on 18 August 2015](http://smartdata2015.dataversity.net) by Gregg.
 
 [RDF.rb]:         http://ruby-rdf.github.com/rdf
 [RDF::DO]:        http://ruby-rdf.github.com/rdf-do
