@@ -147,6 +147,7 @@ A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full 
 * [JSON-LD: JSON for Linking Data](presentations/JSON-LD-JSON-for-linking-data/index.html) – Introduction to JSON-LD given at the [Semantic Technologies Conference in San Francisco on 7 June 2012](http://semtechbizsf2012.semanticweb.com/agenda.cfm?confid=65&scheduleDay=PRINT) by Gregg.
 * [Presenting RDF](presentations/Presenting%20RDF/index.html) – Discussion of the technology behind the [RDF Distiller](http://rdf.greggkellogg.net/) and [Structured Data Linter](http://linter.structured-data.org/) by Gregg.
 * [Tabular Data on the Web](presentations/Tabular-Data-on-the-Web/index.html) - Discussion of the CSV on the Web proposed standard given at [Smart Data conference in San Jose on 18 August 2015](http://smartdata2015.dataversity.net) by Gregg.
+* [Linked Data with Ruby and RDF.rb](presentations/HydraConnect2015/index.html) – Workshop given at [Hydra Connect 2015 on 21 September 2015]() by Gregg.
 
 [RDF.rb]:         http://ruby-rdf.github.com/rdf
 [RDF::DO]:        http://ruby-rdf.github.com/rdf-do

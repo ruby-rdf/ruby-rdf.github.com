@@ -24,9 +24,8 @@ sparql execute query.sparql --dataset doap.ttl
 # project: http://rubygems.org/gems/rdf
 # name: Gregg Kellogg
 
-# Execute a query against a remote endpoint
-sparql query https://ruby-rdf.github.io/workshops/HydraConnect/2015/doap.ttl query.sparql
-
 # Run a local SPARQL server
 sparql server --dataset doap.ttl &
+
+# Execute a query against a remote endpoint
 sparql query http://localhost:8080 query.sparql
