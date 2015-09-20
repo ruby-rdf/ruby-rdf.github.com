@@ -51,7 +51,7 @@
   foaf:homepage      <http://greggkellogg.net/>;
   rdfs:isDefinedBy   <http://greggkellogg.net/foaf> .
 
-_:tom a foaf:Person ;
+_:noreply a foaf:Person ;
   foaf:name          "Tom Johnson" ;
   foaf:mbox          <mailto:tom@dp.la> ;
   foaf:homepage      <hhttps://github.com/no-reply> .
