@@ -1,8 +1,10 @@
 #!/bin/sh
 
+gem install sinatra
+
 # Parse query
 
-sparql parse query.query
+sparql parse query.sparql
 # => 
 # (prefix
 #  ((foaf: <http://xmlns.com/foaf/0.1/>) (doap: <http://usefulinc.com/ns/doap#>))
@@ -27,5 +29,6 @@ sparql execute query.sparql --dataset doap.ttl
 # Run a local SPARQL server
 sparql server --dataset doap.ttl &
 
+sleep 3
 # Execute a query against a remote endpoint
 sparql query http://localhost:8080 query.sparql
