@@ -41,6 +41,55 @@ There are also storage adaptors for popular Triple-stores, Graph-stores SQL, and
 
 There is also a [LinkedData][] gem, which combines a core set of these together.
 
+## Gems
+
+| Gem                |
+| :----------------- |
+| json-ld            |
+| ld-patch           |
+| linkeddata         |
+| rack-linkeddata    |
+| rack-sesame        |
+| rack-sparql        |
+| rdf                |
+| rdf-aggregate-repo |
+| rdf-agraph         |
+| rdf-arq            |
+| rdf-bert           |
+| rdf-blazegraph     |
+| rdf-cassandra      |
+| rdf-do             |
+| rdf-isomorphic     |
+| rdf-json           |
+| rdf-ldp            |
+| rdf-microdata      |
+| rdf-mongo          |
+| rdf-n3             |
+| rdf-normalize      |
+| rdf-raptor         |
+| rdf-rasqal         |
+| rdf-rdfa           |
+| rdf-rdfxml         |
+| rdf-reasoner       |
+| rdf-sesame         |
+| rdf-source         |
+| rdf-spec           |
+| rdf-tabular        |
+| rdf-talis          |
+| rdf-trig           |
+| rdf-trix           |
+| rdf-turtle         |
+| rdf-vcf            |
+| rdf-virtuoso       |
+| rdf-vocab          |
+| rdf-xsd            |
+| rdfs               |
+| sinatra-linkeddata |
+| sparql             |
+| sparql-client      |
+| spira              |
+| trinity            |
+
 ## Examples
 
     require 'linkeddata'
