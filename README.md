@@ -43,52 +43,52 @@ There is also a [LinkedData][] gem, which combines a core set of these together.
 
 ## Gems
 
-| Gem                |
-| :----------------- |
-| json-ld            |
-| ld-patch           |
-| linkeddata         |
-| rack-linkeddata    |
-| rack-sesame        |
-| rack-sparql        |
-| rdf                |
-| rdf-aggregate-repo |
-| rdf-agraph         |
-| rdf-arq            |
-| rdf-bert           |
-| rdf-blazegraph     |
-| rdf-cassandra      |
-| rdf-do             |
-| rdf-isomorphic     |
-| rdf-json           |
-| rdf-ldp            |
-| rdf-microdata      |
-| rdf-mongo          |
-| rdf-n3             |
-| rdf-normalize      |
-| rdf-raptor         |
-| rdf-rasqal         |
-| rdf-rdfa           |
-| rdf-rdfxml         |
-| rdf-reasoner       |
-| rdf-sesame         |
-| rdf-source         |
-| rdf-spec           |
-| rdf-tabular        |
-| rdf-talis          |
-| rdf-trig           |
-| rdf-trix           |
-| rdf-turtle         |
-| rdf-vcf            |
-| rdf-virtuoso       |
-| rdf-vocab          |
-| rdf-xsd            |
-| rdfs               |
-| sinatra-linkeddata |
-| sparql             |
-| sparql-client      |
-| spira              |
-| trinity            |
+| Gem                | Category  | Support   | Maintainer |
+| :----------------- | :-------- | :-------- | :--------- |
+| json-ld            | Format    | Core?     | @gkellogg  |
+| ld-patch           | Format    | Community | @gkellogg  |
+| linkeddata         | Format    | Core      | @ruby-rdf  |
+| rack-linkeddata    | Server    | Obsolete  | -          |
+| rack-sesame        | Server    | Obsolete  | -          |
+| rack-sparql        | Server    | Obsolete  | -          |
+| rdf                | Core      | Core      | @ruby-rdf  |
+| rdf-aggregate-repo | Storage   | Core?     | @gkellogg  |
+| rdf-agraph         | Storage   | Vendor    | ?          |
+| rdf-arq            | Query     | Obsolete  | -          |
+| rdf-bert           | RPC       | Obsolete  | -          |
+| rdf-blazegraph     | Storage   | Vendor    | @no-reply  |
+| rdf-cassandra      | Storage   | Obsolete  | -          |
+| rdf-do             | Storage   | Core      | @ruby-rdf  |
+| rdf-isomorphic     | Misc      | Core      | @ruby-rdf  |
+| rdf-json           | Format    | Core      | @ruby-rdf  |
+| rdf-ldp            | Server    | Community | @no-reply  |
+| rdf-microdata      | Format    | Core?     | @gkellogg  |
+| rdf-mongo          | Storage   | Vendor    | ?          |
+| rdf-n3             | Format    | Core      | @ruby-rdf  |
+| rdf-normalize      | Extension | Core?     | @gkellogg  |
+| rdf-raptor         | Format    | Community | @dwbutler  |
+| rdf-rasqal         | Query     | Obsolete  | -          |
+| rdf-rdfa           | Format    | Core      | @ruby-rdf  |
+| rdf-rdfxml         | Format    | Core      | @ruby-rdf  |
+| rdf-reasoner       | Reasoner  | Community | @gkellogg  |
+| rdf-sesame         | Storage   | Community | @abrisse   |
+| rdf-source         | Extension | Obsolete  | -          |
+| rdf-spec           | Testing   | Core      | @ruby-rdf  |
+| rdf-tabular        | Format    | Community | @gkellogg  |
+| rdf-talis          | Storage   | Obsolete  | -          |
+| rdf-trig           | Format    | Core      | @ruby-rdf  |
+| rdf-trix           | Format    | Core      | @ruby-rdf  |
+| rdf-turtle         | Format    | Core      | @ruby-rdf  |
+| rdf-vcf            | Format    | Community | @bendiken  |
+| rdf-virtuoso       | Storage   | Vendor    | ?          |
+| rdf-vocab          | Extension | Core      | @ruby-rdf  |
+| rdf-xsd            | Extension | Core      | @ruby-rdf  |
+| rdfs               | Reasoner  | Obsolete  | -          |
+| sinatra-linkeddata | Server    | Obsolete  | -          |
+| sparql             | Query     | Core      | @ruby-rdf  |
+| sparql-client      | Client    | Core      | @ruby-rdf  |
+| spira              | ORM       | Obsolete? | ?          |
+| trinity            | CMS       | Obsolete  | -          |
 
 ## Examples
 
