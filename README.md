@@ -22,6 +22,7 @@ The Ruby RDF account also collects numerous gems used for reading and writing di
 In addition to basic Query mechanisms
 
 * [LD::Patch][],
+* [RDF::AggregateRepo][],
 * [RDF::Isomorphic][],
 * [RDF::Normalize][],
 * [SPARQL::Client][],
@@ -35,9 +36,12 @@ Web infrastructure
 
 There are also storage adaptors for popular Triple-stores, Graph-stores SQL, and other NOSQL stores.
 
+ * [RDF::AllegroGraph][],
+ * [RDF::Blazegraph][],
  * [RDF::DO][],
  * [RDF::Mongo][],
  * [RDF::Sesame][]
+ * [RDF::Virtuoso][]
 
 There is also a [LinkedData][] gem, which combines a core set of these together.
 
@@ -45,15 +49,15 @@ There is also a [LinkedData][] gem, which combines a core set of these together.
 
 | Gem                | Category  | Support   | Maintainer |
 | :----------------- | :-------- | :-------- | :--------- |
-| json-ld            | Format    | Core?     | @gkellogg  |
+| json-ld            | Format    | Core      | @gkellogg  |
 | ld-patch           | Format    | Community | @gkellogg  |
 | linkeddata         | Format    | Core      | @ruby-rdf  |
-| rack-linkeddata    | Server    | Obsolete  | -          |
+| rack-linkeddata    | Server    | Community | @ruby-rdf  |
 | rack-sesame        | Server    | Obsolete  | -          |
 | rack-sparql        | Server    | Obsolete  | -          |
 | rdf                | Core      | Core      | @ruby-rdf  |
-| rdf-aggregate-repo | Storage   | Core?     | @gkellogg  |
-| rdf-agraph         | Storage   | Vendor    | ?          |
+| rdf-aggregate-repo | Storage   | Core      | @gkellogg  |
+| rdf-agraph         | Storage   | Vendor    | @emk       |
 | rdf-arq            | Query     | Obsolete  | -          |
 | rdf-bert           | RPC       | Obsolete  | -          |
 | rdf-blazegraph     | Storage   | Vendor    | @no-reply  |
@@ -62,15 +66,15 @@ There is also a [LinkedData][] gem, which combines a core set of these together.
 | rdf-isomorphic     | Misc      | Core      | @ruby-rdf  |
 | rdf-json           | Format    | Core      | @ruby-rdf  |
 | rdf-ldp            | Server    | Community | @no-reply  |
-| rdf-microdata      | Format    | Core?     | @gkellogg  |
-| rdf-mongo          | Storage   | Vendor    | ?          |
+| rdf-microdata      | Format    | Core      | @ruby-rdf  |
+| rdf-mongo          | Storage   | Community | @gkellogg  |
 | rdf-n3             | Format    | Core      | @ruby-rdf  |
-| rdf-normalize      | Extension | Core?     | @gkellogg  |
+| rdf-normalize      | Extension | Core      | @gkellogg  |
 | rdf-raptor         | Format    | Community | @dwbutler  |
 | rdf-rasqal         | Query     | Obsolete  | -          |
 | rdf-rdfa           | Format    | Core      | @ruby-rdf  |
 | rdf-rdfxml         | Format    | Core      | @ruby-rdf  |
-| rdf-reasoner       | Reasoner  | Community | @gkellogg  |
+| rdf-reasoner       | Reasoner  | Core      | @gkellogg  |
 | rdf-sesame         | Storage   | Community | @abrisse   |
 | rdf-source         | Extension | Obsolete  | -          |
 | rdf-spec           | Testing   | Core      | @ruby-rdf  |
@@ -80,14 +84,14 @@ There is also a [LinkedData][] gem, which combines a core set of these together.
 | rdf-trix           | Format    | Core      | @ruby-rdf  |
 | rdf-turtle         | Format    | Core      | @ruby-rdf  |
 | rdf-vcf            | Format    | Community | @bendiken  |
-| rdf-virtuoso       | Storage   | Vendor    | ?          |
+| rdf-virtuoso       | Storage   | Vendor    | @digibib   |
 | rdf-vocab          | Extension | Core      | @ruby-rdf  |
 | rdf-xsd            | Extension | Core      | @ruby-rdf  |
-| rdfs               | Reasoner  | Obsolete  | -          |
-| sinatra-linkeddata | Server    | Obsolete  | -          |
+| rdfs               | Reasoner  | Obsolete  | @ruby-rdf  |
+| sinatra-linkeddata | Server    | Core      | -          |
 | sparql             | Query     | Core      | @ruby-rdf  |
 | sparql-client      | Client    | Core      | @ruby-rdf  |
-| spira              | ORM       | Obsolete? | ?          |
+| spira              | ORM       | Community | @cordawyn  |
 | trinity            | CMS       | Obsolete  | -          |
 
 ## Examples
@@ -198,43 +202,48 @@ A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full 
 * [Tabular Data on the Web](presentations/Tabular-Data-on-the-Web/index.html) - Discussion of the CSV on the Web proposed standard given at [Smart Data conference in San Jose on 18 August 2015](http://smartdata2015.dataversity.net) by Gregg.
 * [Linked Data with Ruby and RDF.rb](presentations/HydraConnect2015/index.html) – Workshop given at [Hydra Connect 2015 on 21 September 2015]() by Gregg.
 
-[RDF.rb]:         http://ruby-rdf.github.com/rdf
-[RDF::DO]:        http://ruby-rdf.github.com/rdf-do
-[RDF::Mongo]:     http://ruby-rdf.github.com/rdf-mongo
-[RDF::Sesame]:    http://ruby-rdf.github.com/rdf-sesame
-[RDF::JSON]:      http://ruby-rdf.github.com/rdf-json
-[RDF::Isomorphic]: http://ruby-rdf.github.com/rdf-isomorphic
-[RDF::LDP]:       http://ruby-rdf.github.com/rdf-ldp
-[RDF::Microdata]: http://ruby-rdf.github.com/rdf-microdata
-[RDF::Normalize]: http://ruby-rdf.github.com/rdf-normalize
-[RDF::N3]:        http://ruby-rdf.github.com/rdf-n3
-[RDF::RDFa]:      http://ruby-rdf.github.com/rdf-rdfa
-[RDF::RDFXML]:    http://ruby-rdf.github.com/rdf-rdfxml
-[RDF::Tabular]:   http://ruby-rdf.github.com/rdf-tabular
-[RDF::TriG]:      http://ruby-rdf.github.com/rdf-trig
-[RDF::TriX]:      http://ruby-rdf.github.com/rdf-trix
-[RDF::Turtle]:    http://ruby-rdf.github.com/rdf-turtle
-[RDF::Raptor]:    http://ruby-rdf.github.com/rdf-raptor
-[LinkedData]:     http://ruby-rdf.github.com/linkeddata
-[JSON::LD]:       http://ruby-rdf.github.com/json-ld
-[LD::Patch]:      http://ruby-rdf.github.com/ld-patch
-[SPARQL gem]:     http://ruby-rdf.github.com/sparql
-[SPARQL::Client]: http://ruby-rdf.github.com/sparql-client
-[Rack::Linkeddata]:     http://ruby-rdf.github.com/rack-linkeddata
-[Sinatra::Linkeddata]:  http://ruby-rdf.github.com/sinatra-linkeddata
-[CSV]:            http://www.w3.org/TR/tabular-data-model
-[JSON-LD]:        http://json-ld.org/
-[Linked Data]:    http://linkeddata.org/
-[Microdata]:      http://en.wikipedia.org/wiki/Microdata_(HTML)
-[N-Quads]:        http://sw.deri.org/2008/07/n-quads/
-[N-Triples]:      http://en.wikipedia.org/wiki/N-Triples
-[Notation3]:      http://en.wikipedia.org/wiki/Notation3
-[RDF/JSON]:       http://n2.talis.com/wiki/RDF_JSON_Specification
-[RDF/XML]:        http://en.wikipedia.org/wiki/RDF/XML
-[RDFa]:           http://en.wikipedia.org/wiki/RDFa
-[Raptor]:         http://en.wikipedia.org/wiki/Redland_RDF_Application_Framework
-[SPARQL]:         http://en.wikipedia.org/wiki/Sparql
-[TriG]:           http://dvcs.w3.org/hg/rdf/raw-file/default/trig/index.html
-[TriX]:           http://www.w3.org/2004/03/trix/
-[Turtle]:         http://www.w3.org/TR/turtle/
-[versioning]:     http://blog.zenspider.com/2008/10/rubygems-howto
+[RDF.rb]:             http://ruby-rdf.github.com/rdf
+[RDF::AggregateRepo]: http://ruby-rdf.github.com/rdf-aggregate-repo
+[RDF::AllegroGraph]:  http://ruby-rdf.github.com/rdf-agraph
+[RDF::Blazegraph]:    http://ruby-rdf.github.com/rdf-blazegraph
+[RDF::DO]:            http://ruby-rdf.github.com/rdf-do
+[RDF::Isomorphic]:    http://ruby-rdf.github.com/rdf-isomorphic
+[RDF::JSON]:          http://ruby-rdf.github.com/rdf-json
+[RDF::LDP]:           http://ruby-rdf.github.com/rdf-ldp
+[RDF::Microdata]:     http://ruby-rdf.github.com/rdf-microdata
+[RDF::Mongo]:         http://ruby-rdf.github.com/rdf-mongo
+[RDF::N3]:            http://ruby-rdf.github.com/rdf-n3
+[RDF::Normalize]:     http://ruby-rdf.github.com/rdf-normalize
+[RDF::Raptor]:        http://ruby-rdf.github.com/rdf-raptor
+[RDF::RDFa]:          http://ruby-rdf.github.com/rdf-rdfa
+[RDF::RDFXML]:        http://ruby-rdf.github.com/rdf-rdfxml
+[RDF::Sesame]:        http://ruby-rdf.github.com/rdf-sesame
+[RDF::Tabular]:       http://ruby-rdf.github.com/rdf-tabular
+[RDF::TriG]:          http://ruby-rdf.github.com/rdf-trig
+[RDF::TriX]:          http://ruby-rdf.github.com/rdf-trix
+[RDF::Turtle]:        http://ruby-rdf.github.com/rdf-turtle
+[RDF::Virtuoso]:      http://ruby-rdf.github.com/rdf-virtuoso
+[JSON::LD]:           http://ruby-rdf.github.com/json-ld
+[LD::Patch]:          http://ruby-rdf.github.com/ld-patch
+[LinkedData]:         http://ruby-rdf.github.com/linkeddata
+[Rack::Linkeddata]:   http://ruby-rdf.github.com/rack-linkeddata
+[Sinatra::Linkeddata]:http://ruby-rdf.github.com/sinatra-linkeddata
+[SPARQL gem]:         http://ruby-rdf.github.com/sparql
+[SPARQL::Client]:     http://ruby-rdf.github.com/sparql-client
+
+[CSV]:                http://www.w3.org/TR/tabular-data-model
+[JSON-LD]:            http://json-ld.org/
+[Linked Data]:        http://linkeddata.org/
+[Microdata]:          http://en.wikipedia.org/wiki/Microdata_(HTML)
+[N-Quads]:            http://sw.deri.org/2008/07/n-quads/
+[N-Triples]:          http://en.wikipedia.org/wiki/N-Triples
+[Notation3]:          http://en.wikipedia.org/wiki/Notation3
+[Raptor]:             http://en.wikipedia.org/wiki/Redland_RDF_Application_Framework
+[RDF/JSON]:           http://n2.talis.com/wiki/RDF_JSON_Specification
+[RDF/XML]:            http://en.wikipedia.org/wiki/RDF/XML
+[RDFa]:               http://en.wikipedia.org/wiki/RDFa
+[SPARQL]:             http://en.wikipedia.org/wiki/Sparql
+[TriG]:               http://dvcs.w3.org/hg/rdf/raw-file/default/trig/index.html
+[TriX]:               http://www.w3.org/2004/03/trix/
+[Turtle]:             http://www.w3.org/TR/turtle/
+[versioning]:         http://blog.zenspider.com/2008/10/rubygems-howto
