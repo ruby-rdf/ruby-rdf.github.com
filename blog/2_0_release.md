@@ -18,7 +18,7 @@ These changes result in a DEPRECATION warning in 1.99, and errors in 2.*:
 * Numerous vocabularies have been moved to the [rdf-vocab][] gem, for example `RDF::Vocab::FOAF` instead of `RDF::FOAF`.
 * Many interfaces would take a `:context` option, this has been replaced with `:graph_name` to more properly correspond to RDF 1.1 concepts. This also includes `#context` and `#context=`, `#has_context?`, and `#each_context` methods in various modules and classes.
 * `Vocabulary.label_for` is replaced with `Vocabulary::Term#label`* `Vocabulary.comment_for` is replaced with `Vocabulary::Term#comment`
-* `#write_graph` and `#write_statementes` are replaced with `RDF::Writable#insert`
+* `#write_graph` and `#write_statements` are replaced with `RDF::Writable#insert`
 * `Writer#format_value` is deprecated in favor of `Writer#format_term`
 * `NTriples::Reader` no longer supports [Surrogate Pairs](https://en.wikipedia.org/wiki/UTF-16).
 * Many interfaces now use [keyword arguments][https://robots.thoughtbot.com/ruby-2-keyword-arguments] instead of positional arguments.
