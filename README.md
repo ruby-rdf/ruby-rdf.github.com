@@ -101,7 +101,7 @@ There is also a [LinkedData][] gem, which combines a core set of these together.
 ### Writing RDF data using the N-Triples format
 
     require 'rdf/ntriples'
-    graph = RDF::Graph.new << [:hello, RDF::DC.title, "Hello, world!"]
+    graph = RDF::Graph.new << [:hello, RDF::Vocab::DC.title, "Hello, world!"]
     graph.dump(:ntriples)
     
 or
@@ -164,9 +164,9 @@ A specific sub-type of Writer can also be invoked directly:
     repo = RDF::Repository.load("http://ruby-rdf.github.com/rdf/etc/doap.nq")
     query = RDF::Query.new({
       :person => {
-        RDF.type  => RDF::FOAF.Person,
-        RDF::FOAF.name => :name,
-        RDF::FOAF.mbox => :email,
+        RDF.type  => RDF::Vocab::FOAF.Person,
+        RDF::Vocab::FOAF.name => :name,
+        RDF::Vocab::FOAF.mbox => :email,
       }
     })
     

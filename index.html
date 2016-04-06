@@ -100,7 +100,7 @@
 <a id="writing-rdf-data-using-the-n-triples-format" class="anchor" href="#writing-rdf-data-using-the-n-triples-format" aria-hidden="true"><span class="octicon octicon-link"></span></a>Writing RDF data using the N-Triples format</h3>
 
 <pre><code>require 'rdf/ntriples'
-graph = RDF::Graph.new &lt;&lt; [:hello, RDF::DC.title, "Hello, world!"]
+graph = RDF::Graph.new &lt;&lt; [:hello, RDF::Vocab::DC.title, "Hello, world!"]
 graph.dump(:ntriples)
 </code></pre>
 
@@ -177,9 +177,9 @@ graph.dump(:nquads)
 repo = RDF::Repository.load("http://ruby-rdf.github.com/rdf/etc/doap.nq")
 query = RDF::Query.new({
   :person =&gt; {
-    RDF.type  =&gt; RDF::FOAF.Person,
-    RDF::FOAF.name =&gt; :name,
-    RDF::FOAF.mbox =&gt; :email,
+    RDF.type  =&gt; RDF::Vocab::FOAF.Person,
+    RDF::Vocab::FOAF.name =&gt; :name,
+    RDF::Vocab::FOAF.mbox =&gt; :email,
   }
 })
 
