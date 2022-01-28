@@ -2,7 +2,7 @@
 
 This is the home of Ruby RDF. This project collects numerous gems supporting Linked Data and Semantic Web programming in Ruby.
 
-The primary gem is [RDF.rb](http://ruby-rdf.github.com/rdf), which contains the core algorithms and classes used for doing basic programming of [RDF][], including support for `Repositories`, `Graphs`, `Statements`, `URIs`, `Literals`, and `BNodes`.
+The primary gem is [RDF.rb](https://ruby-rdf.github.io/rdf), which contains the core algorithms and classes used for doing basic programming of [RDF][], including support for `Repositories`, `Graphs`, `Statements`, `URIs`, `Literals`, and `BNodes`.
 
 The Ruby RDF account also collects numerous gems used for reading and writing different RDF formats. At present, this includes the following:
 
@@ -111,11 +111,11 @@ or
 ### Reading RDF data in the N-Triples format
 
     require 'rdf/ntriples'
-    graph = RDF::Graph.load("http://ruby-rdf.github.com/rdf/etc/doap.nt")
+    graph = RDF::Graph.load("https://ruby-rdf.github.io/rdf/etc/doap.nt")
     
 or
 
-    RDF::Reader.open("http://ruby-rdf.github.com/rdf/etc/doap.nt") do |reader|
+    RDF::Reader.open("https://ruby-rdf.github.io/rdf/etc/doap.nt") do |reader|
       reader.each_statement do |statement|
         puts statement.inspect
       end
@@ -129,13 +129,13 @@ MimeType or file extension, where available.
 
     require 'linkeddata'
     
-    repo = RDF::Repository.load("http://ruby-rdf.github.com/rdf-turtle/etc/doap.ttl")
+    repo = RDF::Repository.load("https://ruby-rdf.github.io/rdf-turtle/etc/doap.ttl")
 
 A specific sub-type of Reader can also be invoked directly:
 
     require 'rdf/turtle'
     
-    RDF::Reader.open("http://ruby-rdf.github.com/rdf-turtle/etc/doap.ttl") do |reader|
+    RDF::Reader.open("https://ruby-rdf.github.io/rdf-turtle/etc/doap.ttl") do |reader|
       reader.each_statement do |statement|
         puts statement.inspect
       end
@@ -148,7 +148,7 @@ appropriate writer to use.
     require 'linkeddata'
 
     RDF::NTriples::Writer.open("doap.nt") do |writer|
-      writer << RDF::Reader.open("http://ruby-rdf.github.com/rdf/etc/doap.nt")
+      writer << RDF::Reader.open("https://ruby-rdf.github.io/rdf/etc/doap.nt")
     end
 
 A specific sub-type of Writer can also be invoked directly:
@@ -161,7 +161,7 @@ A specific sub-type of Writer can also be invoked directly:
 
     require 'rdf/nquads'
     
-    repo = RDF::Repository.load("http://ruby-rdf.github.com/rdf/etc/doap.nq")
+    repo = RDF::Repository.load("https://ruby-rdf.github.io/rdf/etc/doap.nq")
     query = RDF::Query.new({
       :person => {
         RDF.type  => RDF::Vocab::FOAF.Person,
@@ -202,34 +202,34 @@ A separate [SPARQL][SPARQL doc] gem builds on basic BGP support to provide full 
 * [Tabular Data on the Web](presentations/Tabular-Data-on-the-Web/index.html) - Discussion of the CSV on the Web proposed standard given at [Smart Data conference in San Jose on 18 August 2015](http://smartdata2015.dataversity.net) by Gregg.
 * [Linked Data with Ruby and RDF.rb](presentations/HydraConnect2015/index.html) – Workshop given at [Hydra Connect 2015 on 21 September 2015]() by Gregg.
 
-[RDF.rb]:             http://ruby-rdf.github.com/rdf
-[RDF::AggregateRepo]: http://ruby-rdf.github.com/rdf-aggregate-repo
-[RDF::AllegroGraph]:  http://ruby-rdf.github.com/rdf-agraph
-[RDF::Blazegraph]:    http://ruby-rdf.github.com/rdf-blazegraph
-[RDF::DO]:            http://ruby-rdf.github.com/rdf-do
-[RDF::Isomorphic]:    http://ruby-rdf.github.com/rdf-isomorphic
-[RDF::JSON]:          http://ruby-rdf.github.com/rdf-json
-[RDF::LDP]:           http://ruby-rdf.github.com/rdf-ldp
-[RDF::Microdata]:     http://ruby-rdf.github.com/rdf-microdata
-[RDF::Mongo]:         http://ruby-rdf.github.com/rdf-mongo
-[RDF::N3]:            http://ruby-rdf.github.com/rdf-n3
-[RDF::Normalize]:     http://ruby-rdf.github.com/rdf-normalize
-[RDF::Raptor]:        http://ruby-rdf.github.com/rdf-raptor
-[RDF::RDFa]:          http://ruby-rdf.github.com/rdf-rdfa
-[RDF::RDFXML]:        http://ruby-rdf.github.com/rdf-rdfxml
-[RDF::Sesame]:        http://ruby-rdf.github.com/rdf-sesame
-[RDF::Tabular]:       http://ruby-rdf.github.com/rdf-tabular
-[RDF::TriG]:          http://ruby-rdf.github.com/rdf-trig
-[RDF::TriX]:          http://ruby-rdf.github.com/rdf-trix
-[RDF::Turtle]:        http://ruby-rdf.github.com/rdf-turtle
-[RDF::Virtuoso]:      http://ruby-rdf.github.com/rdf-virtuoso
-[JSON::LD]:           http://ruby-rdf.github.com/json-ld
-[LD::Patch]:          http://ruby-rdf.github.com/ld-patch
-[LinkedData]:         http://ruby-rdf.github.com/linkeddata
-[Rack::Linkeddata]:   http://ruby-rdf.github.com/rack-linkeddata
-[Sinatra::Linkeddata]:http://ruby-rdf.github.com/sinatra-linkeddata
-[SPARQL gem]:         http://ruby-rdf.github.com/sparql
-[SPARQL::Client]:     http://ruby-rdf.github.com/sparql-client
+[RDF.rb]:             https://ruby-rdf.github.io/rdf
+[RDF::AggregateRepo]: https://ruby-rdf.github.io/rdf-aggregate-repo
+[RDF::AllegroGraph]:  https://ruby-rdf.github.io/rdf-agraph
+[RDF::Blazegraph]:    https://ruby-rdf.github.io/rdf-blazegraph
+[RDF::DO]:            https://ruby-rdf.github.io/rdf-do
+[RDF::Isomorphic]:    https://ruby-rdf.github.io/rdf-isomorphic
+[RDF::JSON]:          https://ruby-rdf.github.io/rdf-json
+[RDF::LDP]:           https://ruby-rdf.github.io/rdf-ldp
+[RDF::Microdata]:     https://ruby-rdf.github.io/rdf-microdata
+[RDF::Mongo]:         https://ruby-rdf.github.io/rdf-mongo
+[RDF::N3]:            https://ruby-rdf.github.io/rdf-n3
+[RDF::Normalize]:     https://ruby-rdf.github.io/rdf-normalize
+[RDF::Raptor]:        https://ruby-rdf.github.io/rdf-raptor
+[RDF::RDFa]:          https://ruby-rdf.github.io/rdf-rdfa
+[RDF::RDFXML]:        https://ruby-rdf.github.io/rdf-rdfxml
+[RDF::Sesame]:        https://ruby-rdf.github.io/rdf-sesame
+[RDF::Tabular]:       https://ruby-rdf.github.io/rdf-tabular
+[RDF::TriG]:          https://ruby-rdf.github.io/rdf-trig
+[RDF::TriX]:          https://ruby-rdf.github.io/rdf-trix
+[RDF::Turtle]:        https://ruby-rdf.github.io/rdf-turtle
+[RDF::Virtuoso]:      https://ruby-rdf.github.io/rdf-virtuoso
+[JSON::LD]:           https://ruby-rdf.github.io/json-ld
+[LD::Patch]:          https://ruby-rdf.github.io/ld-patch
+[LinkedData]:         https://ruby-rdf.github.io/linkeddata
+[Rack::Linkeddata]:   https://ruby-rdf.github.io/rack-linkeddata
+[Sinatra::Linkeddata]:https://ruby-rdf.github.io/sinatra-linkeddata
+[SPARQL gem]:         https://ruby-rdf.github.io/sparql
+[SPARQL::Client]:     https://ruby-rdf.github.io/sparql-client
 
 [CSV]:                http://www.w3.org/TR/tabular-data-model
 [JSON-LD]:            http://json-ld.org/
